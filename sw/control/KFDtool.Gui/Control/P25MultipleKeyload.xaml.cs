@@ -5,12 +5,14 @@ using KFDtool.P25.TransferConstructs;
 using KFDtool.Shared;
 using Microsoft.Win32;
 using System;
-using System.IO;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Threading.Tasks;
-using System.Threading;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace KFDtool.Gui.Control
@@ -92,9 +94,11 @@ namespace KFDtool.Gui.Control
                 KeysAvailable.Remove(selected.Key);
             }
 
-            lbKeysAvailable.Items.Refresh();
+            ICollectionView keysAvailableCollection = CollectionViewSource.GetDefaultView(lbKeysAvailable.ItemsSource);
+            keysAvailableCollection.Refresh();
 
-            lbKeysSelected.Items.Refresh();
+            ICollectionView keysSelectedCollection = CollectionViewSource.GetDefaultView(lbKeysSelected.ItemsSource);
+            keysSelectedCollection.Refresh();
         }
 
         private void UpdateKeksDropdown()
@@ -113,7 +117,8 @@ namespace KFDtool.Gui.Control
                 }
             }
 
-            dropKeksAvailable.Items.Refresh();
+            ICollectionView dropKeksAvailableCollection = CollectionViewSource.GetDefaultView(dropKeksAvailable.ItemsSource);
+            dropKeksAvailableCollection.Refresh();
         }
 
         private void UpdateGroupsColumns()
@@ -137,9 +142,11 @@ namespace KFDtool.Gui.Control
                 GroupsAvailable.Remove(selected.Key);
             }
 
-            lbGroupsAvailable.Items.Refresh();
+            ICollectionView groupsAvailableCollection = CollectionViewSource.GetDefaultView(lbGroupsAvailable.ItemsSource);
+            groupsAvailableCollection.Refresh();
 
-            lbGroupsSelected.Items.Refresh();
+            ICollectionView groupsSelectedCollection = CollectionViewSource.GetDefaultView(lbGroupsSelected.ItemsSource);
+            groupsSelectedCollection.Refresh();
         }
 
         private void Keys_Add_Click(object sender, RoutedEventArgs e)
