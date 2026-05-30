@@ -8,4 +8,12 @@
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KFDtool.Shared\KFDtool.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

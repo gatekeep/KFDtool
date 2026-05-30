@@ -1,4 +1,4 @@
-﻿using KFDtool.Container;
+﻿using KFDEKC.Container.FileStructure.EKC;
 using KFDtool.Elite;
 using KFDtool.Gui.Dialog;
 using KFDtool.P25.TransferConstructs;
@@ -120,7 +120,7 @@ namespace KFDtool.Gui.Control
         {
             GroupsAvailable.Clear();
 
-            foreach (Container.GroupItem groupItem in Settings.ContainerInner.Groups)
+            foreach (var groupItem in Settings.ContainerInner.Groups)
             {
                 GroupsAvailable.Add(groupItem.Id, groupItem.Name);
             }
@@ -208,7 +208,7 @@ namespace KFDtool.Gui.Control
             {
                 bool found = false;
 
-                foreach (Container.GroupItem containerGroupItem in Settings.ContainerInner.Groups)
+                foreach (var containerGroupItem in Settings.ContainerInner.Groups)
                 {
                     if (groupItemId == containerGroupItem.Id)
                     {
@@ -346,7 +346,7 @@ namespace KFDtool.Gui.Control
                 {
                     bool found = false;
 
-                    foreach (Container.GroupItem containerGroupItem in Settings.ContainerInner.Groups)
+                    foreach (var containerGroupItem in Settings.ContainerInner.Groups)
                     {
                         if (groupItemId == containerGroupItem.Id)
                         {
